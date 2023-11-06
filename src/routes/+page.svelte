@@ -1,4 +1,9 @@
 <script lang="ts">
+	import { Form, Screen } from '$components';
 </script>
 
-<h1>home</h1>
+<svelte:head>
+	<title>Frontend Mentor | Age calculator app</title>
+</svelte:head>
+<Form />
+<Screen />
