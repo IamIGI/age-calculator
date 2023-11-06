@@ -16,11 +16,12 @@
 		border-radius: 15px;
 		border-bottom-right-radius: 25%;
 		display: flex;
+		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
 		gap: 10px;
 		width: fit-content;
-		padding: 15px;
+		padding: 45px;
 		margin: 10px;
 	}
 </style>
