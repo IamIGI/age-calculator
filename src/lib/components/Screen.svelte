@@ -1,13 +1,11 @@
 <script lang="ts">
-	let year = 1998;
-	let month = 3;
-	let day = 12;
+	import { calculator as calculatorStore } from '$stores';
 </script>
 
 <ul>
-	<li><span>{year}</span> years</li>
-	<li><span>{month}</span> month</li>
-	<li><span>{day}</span> days</li>
+	<li><span>{$calculatorStore.diff?.year ?? '--'}</span> years</li>
+	<li><span>{$calculatorStore.diff?.month ?? '--'}</span> months</li>
+	<li><span>{$calculatorStore.diff?.day ?? '--'}</span> days</li>
 </ul>
 
 <style lang="scss">

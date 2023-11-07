@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { EventHandler, KeyboardEventHandler } from 'svelte/elements';
-	import calculatorStore from '$stores/calculator';
+	import { calculator as calculatorStore } from '$stores';
 	import icon_arrow from '$assets/images/icon-arrow.svg';
 
 	let day: string = '';
@@ -110,11 +110,7 @@
 
 	const handleSubmit: EventHandler<SubmitEvent, HTMLFormElement> = (e) => {
 		if (!isValidate()) return;
-		// if()
-		// calculatorStore.update((prev) => prev.day = day )
-		// success
-		// resetForm()
-		console.log('success');
+		calculatorStore.setDate(Number(day), Number(month), Number(year));
 	};
 </script>
 
