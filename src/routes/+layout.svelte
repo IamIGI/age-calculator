@@ -23,5 +23,10 @@
 		width: fit-content;
 		padding: 45px;
 		margin: 10px;
+
+		@media screen and (max-width: 650px) {
+			gap: 2px;
+			padding: 25px;
+		}
 	}
 </style>
