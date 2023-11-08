@@ -11,6 +11,7 @@ type Calculator = {
 		month: number | null;
 		year: number | null;
 	};
+	isLoading?: boolean;
 };
 
 const initValues: Calculator = {
@@ -19,7 +20,8 @@ const initValues: Calculator = {
 		day: null,
 		month: null,
 		year: null
-	}
+	},
+	isLoading: false
 };
 
 function createCalculatorStore() {
@@ -59,10 +61,12 @@ function createCalculatorStore() {
 	}
 
 	function setDate(day: number, month: number, year: number) {
-		set({ provided: { day, month, year } });
-		const dateFormat = `${year}/${month}/${day}`; // YYYY/MM/DD format
-		const result = dateDiff(dateFormat);
-		set({ provided: { day, month, year }, diff: result });
+		set({ provided: { day, month, year }, isLoading: true });
+		setTimeout(() => {
+			const dateFormat = `${year}/${month}/${day}`; // YYYY/MM/DD format
+			const result = dateDiff(dateFormat);
+			set({ provided: { day, month, year }, diff: result, isLoading: false });
+		}, 1000);
 	}
 
 	function clearStore() {

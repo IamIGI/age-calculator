@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"sass": "^1.69.5"
+		"sass": "^1.69.5",
+		"svelte-loading-spinners": "^0.3.4"
 	}
 }
