@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { Wave } from 'svelte-loading-spinners';
 	import { calculator as calculatorStore } from '$stores';
-	import { Loading, ListItem } from '$components';
+	import { ListItem } from '$components';
 
 	$: innerWidth = 0;
 </script>
