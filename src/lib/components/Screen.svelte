@@ -24,5 +24,17 @@
 			font-style: italic;
 			font-weight: 800;
 		}
+
+		@media screen and (max-width: 650px) {
+			li {
+				font-size: calc(var(--font-size-screen) - 15px);
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			li {
+				font-size: calc(var(--font-size-screen) - 25px);
+			}
+		}
 	}
 </style>

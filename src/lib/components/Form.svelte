@@ -196,6 +196,14 @@
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: flex-start;
+
+		@media screen and (max-width: 650px) {
+			width: 400px;
+		}
+
+		@media screen and (max-width: 480px) {
+			width: 300px;
+		}
 	}
 
 	.inputs-container {
@@ -226,6 +234,11 @@
 			padding: 10px 15px;
 			border-radius: 8px;
 			border: 1px solid var(--color-neutral-light-grey);
+
+			&:hover {
+				border: 1px solid var(--color-primary-purple-hover);
+				cursor: pointer;
+			}
 		}
 
 		p {
@@ -245,6 +258,36 @@
 
 		.empty {
 			height: 10px;
+		}
+
+		@media screen and (max-width: 650px) {
+			input {
+				width: 100px;
+				font-size: calc(var(--font-size-inputs) - 10px);
+			}
+			label {
+				font-size: calc(var(--font-size-labels) - 4px);
+			}
+
+			p {
+				font-size: calc(var(--font-size-error) - 1px);
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			gap: 2px;
+			input {
+				width: 70px;
+				font-size: calc(var(--font-size-inputs) - 15px);
+				padding: 5px 7px;
+			}
+			label {
+				font-size: calc(var(--font-size-labels) - 5px);
+			}
+
+			p {
+				font-size: calc(var(--font-size-error) - 2px);
+			}
 		}
 	}
 
@@ -279,6 +322,25 @@
 			img {
 				height: 35px;
 				width: 35px;
+			}
+			@media screen and (max-width: 650px) {
+				width: 55px;
+				height: 55px;
+				border-radius: 30px;
+				img {
+					height: 28px;
+					width: 28px;
+				}
+			}
+
+			@media screen and (max-width: 480px) {
+				width: 45px;
+				height: 45px;
+				border-radius: 25px;
+				img {
+					height: 23px;
+					width: 23px;
+				}
 			}
 		}
 	}
