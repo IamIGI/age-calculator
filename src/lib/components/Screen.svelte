@@ -1,11 +1,34 @@
 <script lang="ts">
 	import { calculator as calculatorStore } from '$stores';
+	import { ListItem } from '$components';
+
+	$: innerWidth = 0;
 </script>
 
+<svelte:window bind:innerWidth />
+
 <ul>
-	<li><span>{$calculatorStore.diff?.year ?? '--'}</span> years</li>
-	<li><span>{$calculatorStore.diff?.month ?? '--'}</span> months</li>
-	<li><span>{$calculatorStore.diff?.day ?? '--'}</span> days</li>
+	<li>
+		<ListItem
+			value={$calculatorStore.diff?.day}
+			text="days"
+			isLoading={$calculatorStore.isLoading}
+		/>
+	</li>
+	<li>
+		<ListItem
+			value={$calculatorStore.diff?.month}
+			text="months"
+			isLoading={$calculatorStore.isLoading}
+		/>
+	</li>
+	<li>
+		<ListItem
+			value={$calculatorStore.diff?.year}
+			text="years"
+			isLoading={$calculatorStore.isLoading}
+		/>
+	</li>
 </ul>
 
 <style lang="scss">
@@ -17,12 +40,13 @@
 
 		li {
 			text-align: left;
-			span {
-				color: var(--color-primary-purple);
-			}
 			font-size: var(--font-size-screen);
 			font-style: italic;
 			font-weight: 800;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			gap: 5px;
 		}
 
 		@media screen and (max-width: 650px) {
